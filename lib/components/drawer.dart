@@ -24,6 +24,7 @@ class M3Drawer extends StatelessWidget {
           _NavigationItem(title: "Home", icon: Icons.home_rounded, pageId: PageEnum.home, id: id),
           _NavigationItem(title: "Android Apps", icon: Icons.android, pageId: PageEnum.android, id: id),
           _NavigationItem(title: "Windows Apps", icon: Icons.window, pageId: PageEnum.android, id: id),
+          _NavigationItem(title: "Browser Extensions", icon: Icons.extension, pageId: PageEnum.browser, id: id),
         ],
       ),
     );
