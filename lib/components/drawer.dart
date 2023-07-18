@@ -41,19 +41,21 @@ class _NavigationItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final ColorScheme color = Theme.of(context).colorScheme;
+    final bool isSelected = pageId == id;
+
     return Padding(
       padding: const EdgeInsets.only(bottom: 8),
       child: ListTile(
         minVerticalPadding: 24,
-        tileColor: pageId == id ? color.surfaceVariant : color.surface,
+        tileColor: isSelected ? color.secondaryContainer : color.surface,
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(64)),
         onTap: () {
           final String destination = generateDestinationRoute(pageId);
           Scaffold.of(context).closeDrawer();
           context.go(destination);
         },
-        title: Text(title),
-        leading: Icon(icon),
+        title: Text(title, style: TextStyle(color: isSelected ? color.onSecondaryContainer : color.onSurface)),
+        leading: Icon(icon, color: isSelected ? color.onSecondaryContainer : color.onSurfaceVariant),
       ),
     );
   }
