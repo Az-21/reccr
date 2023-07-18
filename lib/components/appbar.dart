@@ -13,7 +13,10 @@ class M3AppBar extends StatelessWidget {
         onPressed: () => Scaffold.of(context).openDrawer(),
       ),
       title: Text(title),
-      actions: const [],
+      actions: [
+        IconButton(onPressed: () {}, icon: const Icon(Icons.settings)),
+        IconButton(onPressed: () {}, icon: const Icon(Icons.more_vert)),
+      ],
     );
   }
 }
