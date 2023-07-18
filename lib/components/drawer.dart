@@ -19,12 +19,15 @@ class M3Drawer extends StatelessWidget {
     return Drawer(
       elevation: 0,
       child: ListView(
-        padding: const EdgeInsets.fromLTRB(8, 128, 8, 0),
+        padding: const EdgeInsets.fromLTRB(8, 64, 8, 0),
         children: [
+          const _SectionLabel(text: "Pages"),
           _NavigationItem(title: "Home", icon: Icons.home_rounded, pageId: PageEnum.home, id: id),
           _NavigationItem(title: "Android Apps", icon: Icons.android, pageId: PageEnum.android, id: id),
           _NavigationItem(title: "Windows Apps", icon: Icons.window, pageId: PageEnum.android, id: id),
           _NavigationItem(title: "Browser Extensions", icon: Icons.extension, pageId: PageEnum.browser, id: id),
+          const Divider(indent: 16, endIndent: 16),
+          const _SectionLabel(text: "Options"),
         ],
       ),
     );
@@ -58,6 +61,20 @@ class _NavigationItem extends StatelessWidget {
         title: Text(title, style: TextStyle(color: isSelected ? color.onSecondaryContainer : color.onSurface)),
         leading: Icon(icon, color: isSelected ? color.onSecondaryContainer : color.onSurfaceVariant),
       ),
+    );
+  }
+}
+
+class _SectionLabel extends StatelessWidget {
+  const _SectionLabel({required this.text});
+
+  final String text;
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.fromLTRB(16, 32, 0, 32),
+      child: Text(text, style: Theme.of(context).textTheme.labelLarge),
     );
   }
 }
