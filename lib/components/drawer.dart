@@ -7,6 +7,9 @@ enum PageEnum {
   android,
   windows,
   browser,
+  setting,
+  about,
+  feedback,
 }
 
 class M3Drawer extends StatelessWidget {
@@ -28,6 +31,9 @@ class M3Drawer extends StatelessWidget {
           _NavigationItem(title: "Browser Extensions", icon: Icons.extension, pageId: PageEnum.browser, id: id),
           const Divider(indent: 16, endIndent: 16),
           const _SectionLabel(text: "Options"),
+          _NavigationItem(title: "Settings", icon: Icons.settings, pageId: PageEnum.setting, id: id),
+          _NavigationItem(title: "Feedback", icon: Icons.reviews, pageId: PageEnum.feedback, id: id),
+          _NavigationItem(title: "About", icon: Icons.info, pageId: PageEnum.about, id: id),
         ],
       ),
     );
