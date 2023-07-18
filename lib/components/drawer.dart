@@ -11,6 +11,7 @@ enum PageEnum {
 
 class M3Drawer extends StatelessWidget {
   const M3Drawer({super.key, required this.id});
+
   final PageEnum id;
 
   @override
@@ -31,10 +32,11 @@ class M3Drawer extends StatelessWidget {
 
 class _NavigationItem extends StatelessWidget {
   const _NavigationItem({required this.icon, required this.title, required this.pageId, required this.id});
-  final String title;
+
   final IconData icon;
-  final PageEnum pageId;
   final PageEnum id;
+  final PageEnum pageId;
+  final String title;
 
   @override
   Widget build(BuildContext context) {

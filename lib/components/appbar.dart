@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 class M3AppBar extends StatelessWidget {
   const M3AppBar({super.key, required this.title});
+
   final String title;
 
   @override

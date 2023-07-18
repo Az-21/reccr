@@ -5,6 +5,7 @@ import 'package:reccr/components/function.dart';
 
 class DeviceSelectionCard extends StatelessWidget {
   const DeviceSelectionCard({super.key, required this.icon, required this.heading, required this.id});
+
   final String heading;
   final IconData icon;
   final PageEnum id;
@@ -34,6 +35,7 @@ class DeviceSelectionCard extends StatelessWidget {
 
 class _Heading extends StatelessWidget {
   const _Heading({required this.heading, required this.icon});
+
   final String heading;
   final IconData icon;
 
